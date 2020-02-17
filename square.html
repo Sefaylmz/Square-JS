@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Square</title>
+    </head>
+    <body>
+        <div onclick="myScript" id="randomSquare" style="background-color: black; width:150px; height: 150px;">
+
+        </div>
+
+        <script>
+            var x = document.getElementById('randomSquare').onclick=function()
+            {
+               
+                var blue = Math.round(Math.random()*255);
+                var red = Math.round(Math.random()*255);
+                var green = Math.round(Math.random()*255);
+                var size = Math.round(Math.random()*500);
+                
+
+                var bg = "rgb("+ red + "," + green + "," + blue + ")";
+
+                var element = document.getElementById("randomSquare");
+                              
+                element.style.backgroundColor = bg;
+                element.style.width = size;
+                element.style.height = size;
+                element.style.position = "relative";
+
+                wHeight = window.innerHeight;
+                wWidth = window.innerWidth;
+                
+                
+                divHeight = element.clientHeight;
+                divWidth = element.clientWidth;
+                
+                H = wHeight - divHeight;
+                W = wWidth - divWidth;
+
+                var randPosH = Math.round(Math.random() * H);
+                var randPosW = Math.round(Math.random() * W);
+
+
+                element.style.top = randPosH + "px";
+                element.style.left = randPosW + "px";
+            }
+        </script>
+
+    </body>
+</html>
